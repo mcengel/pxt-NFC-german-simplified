@@ -38,12 +38,6 @@ namespace NFC {
         }
     }
 
-    /**
-     * Setup DFRobot NFC module Tx Rx to micro:bit pins.
-     * 設定DFRobot的Tx、Rx連接腳位
-     * @param pinTX to pinTX ,eg: SerialPin.P13
-     * @param pinRX to pinRX ,eg: SerialPin.P14
-    */
     //% weight=100
     //% blockId="NFC_setSerial" block="Starte NFC Reader"
     export function NFC_setSerial(): void {
