@@ -45,7 +45,7 @@ namespace NFC {
      * @param pinRX to pinRX ,eg: SerialPin.P14
     */
     //% weight=100
-    //% blockId="NFC_setSerial" block="set NFC TX to %pinTX | RX to %pinRX"
+    //% blockId="NFC_setSerial" block="Starte NFC Reader"
     export function NFC_setSerial(): void {
         myRxPin=12;
         myTxPin=16;
@@ -57,31 +57,15 @@ namespace NFC {
         init=true;
     }
 
-    //% weight=95
-    //% blockId="NFC_disconnect" block="NFC disconnect"
-    export function NFC_disconnect(): void {
-        init=false;
-    }
-
-    //% weight=94
-    //% blockId="NFC_reconnect" block="NFC reconnect"
-    export function NFC_reconnect(): void {
-        serial.redirect(
-            myRxPin,
-            myTxPin,
-            BaudRate.BaudRate115200
-        )
-        init=true;
-    }
 
     //% weight=90
-    //% blockId="nfcEvent" block="When RFID card is detected"
+    //% blockId="nfcEvent" block="Wenn Chip erkannt wurde"
     export function nfcEvent(tempAct: Action) {
         myNFCevent = tempAct;
     }
 
     //% weight=80
-    //% blockId="getUID" block="RFID UID string"
+    //% blockId="getUID" block="Chip ID Text"
     export function getUID(): string {
         serial.setRxBufferSize(100)
         wakeup();
@@ -110,7 +94,7 @@ namespace NFC {
     }
 
     //% weight=70
-    //% blockId="detectedRFIDcard" block="Detected RFID card?"
+    //% blockId="detectedRFIDcard" block="Chip erkannt?"
     export function detectedRFIDcard(): boolean {
         serial.setRxBufferSize(100)
         wakeup();
