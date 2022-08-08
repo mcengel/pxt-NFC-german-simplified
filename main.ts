@@ -9,8 +9,8 @@ namespace NFC {
     let password = pins.createBuffer(6);
     let receivedBuffer = pins.createBuffer(25);
     let uid = pins.createBuffer(4);
-    let myRxPin=SerialPin.P14;
-    let myTxPin=SerialPin.P13;
+    let myRxPin=SerialPin.P12;
+    let myTxPin=SerialPin.P16;
     let init=false;
     password[0] = 0xFF;
     password[1] = 0xFF;
